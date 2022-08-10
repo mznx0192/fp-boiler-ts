@@ -9,3 +9,17 @@ export const deleteElement = (
 
   return copyObject;
 };
+
+export const addElement = <Type>(
+  object: { [key: string | number | symbol]: Type },
+  key: string | number | symbol,
+  value: Type
+) => {
+  const copyObject = Object.assign({}, object);
+
+  if (!copyObject[key]) copyObject[key] = value;
+
+  return copyObject;
+};
+
+
