@@ -22,4 +22,14 @@ export const addElement = <Type>(
   return copyObject;
 };
 
+export const modifyElement = <Type>(
+  object: { [key: string | number | symbol]: Type },
+  key: string | number | symbol,
+  value: Type
+) => {
+  const copyObject = Object.assign({}, object);
 
+  if (copyObject[key]) copyObject[key] = value;
+
+  return copyObject;
+};
